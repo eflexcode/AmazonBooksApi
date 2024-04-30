@@ -1,0 +1,8 @@
+spring:
+  application:
+    name: AmazonBooksApi
+  data:
+    mongodb:
+      database: AmazonBooksApi
+      host: localhost
+      port: 27017
