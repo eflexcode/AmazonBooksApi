@@ -10,7 +10,7 @@ import reactor.core.publisher.Mono;
 public interface BooksRepository extends ReactiveCrudRepository<Books, String> {
 
     Flux<Books> findByTitle(final String title);
-    Flux<Books> findByBookAuthor(final String bookAuthor);
+    Flux<Books> findByAuthor(final String bookAuthor);
     Flux<Books> findByYearOfPublication(final Integer yearOfPublication);
     Flux<Books> findByPublisher(final String publisher);
 
