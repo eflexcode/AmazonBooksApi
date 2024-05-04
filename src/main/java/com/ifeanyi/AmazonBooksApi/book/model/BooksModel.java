@@ -5,9 +5,9 @@ import lombok.Data;
 @Data
 public class BooksModel {
 
-    private Long ISBN;
-    private String BookTitle;
-    private String BookAuthor;
+    private String ISBN;
+    private String title;
+    private String author;
     private Integer YearOfPublication;
     private String Publisher;
     private String ImageUrlS;
