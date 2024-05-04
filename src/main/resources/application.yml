@@ -1,8 +1,11 @@
 spring:
   application:
     name: AmazonBooksApi
-  data:
-    mongodb:
-      database: AmazonBooksApi
-      host: localhost
-      port: 27017
+  r2dbc:
+    url: r2dbc:postgresql://localhost:5432/AmazonBooksApi
+    username: postgres
+    password: Larry123
+
+
+
+

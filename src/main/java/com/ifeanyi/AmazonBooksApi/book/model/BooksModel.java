@@ -1,7 +1,6 @@
 package com.ifeanyi.AmazonBooksApi.book.model;
 
 import lombok.Data;
-import org.springframework.data.mongodb.core.mapping.Field;
 
 @Data
 public class BooksModel {

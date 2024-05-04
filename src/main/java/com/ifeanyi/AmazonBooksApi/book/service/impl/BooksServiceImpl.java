@@ -7,10 +7,9 @@ import com.ifeanyi.AmazonBooksApi.book.service.BooksService;
 import lombok.AllArgsConstructor;
 import org.springframework.beans.BeanUtils;
 import org.springframework.stereotype.Service;
+import reactor.core.CoreSubscriber;
 import reactor.core.publisher.Flux;
 import reactor.core.publisher.Mono;
-
-import org.springframework.data.repository.reactive.*;
 
 @Service
 @AllArgsConstructor
@@ -22,8 +21,7 @@ public class BooksServiceImpl implements BooksService {
     public Mono<Books> createBook(BooksModel booksModel) {
 
         Books books = new Books();
-        BeanUtils.copyProperties(booksModel,books);
-
+        BeanUtils.copyProperties(booksModel, books);
 
         return booksRepository.save(books);
     }
@@ -35,17 +33,24 @@ public class BooksServiceImpl implements BooksService {
 
     @Override
     public Mono<Books> getById(String id) {
-        return booksRepository.findById(id);
+
+        System.out.println("ggggggggggggg service " + booksRepository.findById(id));
+
+        Books books = new Books();
+        books.setTitle("yyyyyyyyyyyyy");
+
+        Mono<Books> b = Mono.just(books);
+        return  booksRepository.findById(id);
     }
 
     @Override
     public Mono<Books> getByISBN(Long ISBN) {
-        return null;
+        return booksRepository.findByISBN(ISBN);
     }
 
     @Override
     public Flux<Books> getByBookTitle(String bookTitle) {
-        return null;
+        return booksRepository.findByTitle(bookTitle);
     }
 
     @Override

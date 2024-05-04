@@ -5,9 +5,7 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication
 public class AmazonBooksApiApplication {
-
-	public static void main(String[] args) {
-		SpringApplication.run(AmazonBooksApiApplication.class, args);
-	}
-
+    public static void main(String[] args) {
+        SpringApplication.run(AmazonBooksApiApplication.class, args);
+    }
 }

@@ -1,37 +1,44 @@
 package com.ifeanyi.AmazonBooksApi.book.entity;
 
+import lombok.AllArgsConstructor;
 import lombok.Data;
+import lombok.NoArgsConstructor;
 import org.springframework.data.annotation.Id;
-import org.springframework.data.mongodb.core.mapping.Document;
-import org.springframework.data.mongodb.core.mapping.Field;
+import org.springframework.data.relational.core.mapping.Column;
+import org.springframework.data.relational.core.mapping.Table;
 
-@Document
+import java.math.BigInteger;
+
+@Table
 @Data
+@AllArgsConstructor
+@NoArgsConstructor
 public class Books {
 
     @Id
-    private String id;
+    private BigInteger id;
 
-    private Long ISBN;
+    private String ISBN;
 
-    @Field(name = "Book-Title")
-    private String BookTitle;
+    @Column(value = "Book-Title")
+    private String title;
 
-    @Field(name = "Book-Author")
-    private String BookAuthor;
+    @Column(value = "Book-Author")
+    private String author;
 
-    @Field(name = "Year-Of-Publication")
-    private Integer YearOfPublication;
+    @Column(value = "Year-Of-Publication")
+    private Integer yearOfPublication;
 
-    private String Publisher;
+    @Column(value = "Publisher")
+    private String publisher;
 
-    @Field(name = "Image-URL-S")
-    private String ImageUrlS;
+    @Column(value = "Image-URL-S")
+    private String imageUrlS;
 
-    @Field(name = "Image-URL-M")
-    private String ImageUrlM;
+    @Column(value = "Image-URL-M")
+    private String imageUrlM;
 
-    @Field(name = "Image-URL-L")
-    private String ImageUrlL;
+    @Column(value = "Image-URL-L")
+    private String imageUrlL;
 
 }
