@@ -14,7 +14,7 @@ import java.util.Date;
 public class GlobalExceptionHandler extends ResponseEntityExceptionHandler {
 
     @ExceptionHandler(Exception.class)
-    public ResponseEntity<ExcResponse> handleGlobalException(Exception exception, WebRequest webRequest){
+    public ResponseEntity<ExcResponse> handleGlobalException(Exception exception){
 
         ExcResponse excResponse = new ExcResponse(exception.getMessage(), HttpStatus.INTERNAL_SERVER_ERROR.value(),new Date());
 
@@ -23,7 +23,7 @@ public class GlobalExceptionHandler extends ResponseEntityExceptionHandler {
     }
 
     @ExceptionHandler(DuplicateException.class)
-    public ResponseEntity<ExcResponse> handleDuplicateException(DuplicateException exception, WebRequest webRequest){
+    public ResponseEntity<ExcResponse> handleDuplicateException(DuplicateException exception){
 
         ExcResponse excResponse = new ExcResponse(exception.getMessage(), HttpStatus.BAD_REQUEST.value(),new Date());
 

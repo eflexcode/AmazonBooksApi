@@ -1,27 +1,25 @@
 package com.ifeanyi.AmazonBooksApi.util;
 
-import com.ifeanyi.AmazonBooksApi.book.entity.Books;
-import com.ifeanyi.AmazonBooksApi.book.model.BooksModel;
-import com.ifeanyi.AmazonBooksApi.book.service.BooksService;
-import com.opencsv.CSVReader;
-import lombok.AllArgsConstructor;
 import lombok.RequiredArgsConstructor;
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.beans.factory.annotation.Configurable;
-import org.springframework.context.annotation.Bean;
-import org.springframework.stereotype.Component;
 
-import java.awt.print.Book;
-import java.io.FileNotFoundException;
-import java.io.FileReader;
-import java.io.IOException;
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.List;
+import java.util.regex.Pattern;
 
-@Component
 @RequiredArgsConstructor
 public class Util {
 
+    public  static boolean isEmailValid(String email){
+
+        String emailRegex = "^[a-zA-Z0-9_+&*-]+(?:\\."+
+                "[a-zA-Z0-9_+&*-]+)*@" +
+                "(?:[a-zA-Z0-9-]+\\.)+[a-z" +
+                "A-Z]{2,7}$";
+
+        Pattern pattern = Pattern.compile(emailRegex);
+
+        if (email == null)
+            return false;
+        return pattern.matcher(email).matches();
+
+    }
 
 }
