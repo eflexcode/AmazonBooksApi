@@ -16,7 +16,7 @@ public interface BooksService {
     Mono<Books> updateBook(BooksModel booksModel);
     Mono<Books> getById(Long id);
     Mono<Books> getByISBN(Long ISBN);
-    Flux<Books> getByBookTitle(final String bookTitle);
+    Flux<Books> getByTitle(final String bookTitle);
     Flux<Books> getByBookAuthor(final String bookAuthor);
     Flux<Books> getByYearOfPublication(final Integer yearOfPublication);
     Flux<Books> getByPublisher(final String publisher);

@@ -17,17 +17,17 @@ public class BooksController {
 
     @PostMapping()
     public Mono<Books> createBook(@RequestBody BooksModel booksModel){
-        System.out.println("ggggggggggggg con");
       return booksService.createBook(booksModel);
     } @GetMapping("/book/{id}")
     public Mono<Books> getById(@PathVariable Long id){
-        System.out.println("ggggggggggggg con");
       return booksService.getById(id);
+    }
+    @GetMapping("/isbn/{isbn}")
+    public Mono<Books> getByIsbn(@PathVariable Long isbn){
+        return booksService.getByISBN(isbn);
     }
     @GetMapping("/{title}")
     public Flux<Books> getByTitle(@PathVariable String title){
-        System.out.println("ggggggggggggg con");
-      return booksService.getByBookTitle(title);
+        return booksService.getByTitle(title);
     }
-
 }

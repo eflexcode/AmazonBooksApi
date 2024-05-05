@@ -45,7 +45,6 @@ public class BooksServiceImpl implements BooksService {
         Books books = new Books();
         books.setTitle("yyyyyyyyyyyyy");
 
-        Mono<Books> b = Mono.just(books);
         return  booksRepository.findById(id);
     }
 
@@ -55,7 +54,7 @@ public class BooksServiceImpl implements BooksService {
     }
 
     @Override
-    public Flux<Books> getByBookTitle(String bookTitle) {
+    public Flux<Books> getByTitle(String bookTitle) {
         return booksRepository.findByTitle(bookTitle);
     }
 
