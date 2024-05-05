@@ -55,22 +55,22 @@ public class BooksServiceImpl implements BooksService {
 
     @Override
     public Flux<Books> getByTitle(String bookTitle) {
-        return booksRepository.findByTitle(bookTitle);
+        return booksRepository.findByTitleContainingIgnoreCase(bookTitle);
     }
 
     @Override
     public Flux<Books> getByBookAuthor(String bookAuthor) {
-        return null;
+        return booksRepository.findByAuthorContainingIgnoreCase(bookAuthor);
     }
 
     @Override
     public Flux<Books> getByYearOfPublication(Integer yearOfPublication) {
-        return null;
+        return booksRepository.findByYearOfPublicationContaining(yearOfPublication);
     }
 
     @Override
     public Flux<Books> getByPublisher(String publisher) {
-        return null;
+        return booksRepository.findByPublisherContainingIgnoreCase(publisher);
     }
 
     @Override

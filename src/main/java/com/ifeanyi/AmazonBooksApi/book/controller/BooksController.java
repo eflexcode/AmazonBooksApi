@@ -16,18 +16,35 @@ public class BooksController {
     private BooksService booksService;
 
     @PostMapping()
-    public Mono<Books> createBook(@RequestBody BooksModel booksModel){
-      return booksService.createBook(booksModel);
-    } @GetMapping("/book/{id}")
-    public Mono<Books> getById(@PathVariable Long id){
-      return booksService.getById(id);
+    public Mono<Books> createBook(@RequestBody BooksModel booksModel) {
+        return booksService.createBook(booksModel);
     }
+
+    @GetMapping("/book/{id}")
+    public Mono<Books> getById(@PathVariable Long id) {
+        return booksService.getById(id);
+    }
+
     @GetMapping("/isbn/{isbn}")
-    public Mono<Books> getByIsbn(@PathVariable Long isbn){
+    public Mono<Books> getByIsbn(@PathVariable Long isbn) {
         return booksService.getByISBN(isbn);
     }
-    @GetMapping("/{title}")
-    public Flux<Books> getByTitle(@PathVariable String title){
+
+    @GetMapping("title/{title}")
+    public Flux<Books> getByTitle(@PathVariable String title) {
         return booksService.getByTitle(title);
+    }
+
+    @GetMapping("author/{author}")
+    public Flux<Books> getByAuthor(@PathVariable String author) {
+        return booksService.getByBookAuthor(author);
+    }
+    @GetMapping("publisher/{publisher}")
+    public Flux<Books> getByPublisher(@PathVariable String publisher) {
+        return booksService.getByPublisher(publisher);
+    }
+    @GetMapping("year_of_publication/{year}")
+    public Flux<Books> getByYearOfPublication(@PathVariable Integer year) {
+        return booksService.getByYearOfPublication(year);
     }
 }
