@@ -49,7 +49,7 @@ public class BooksServiceImpl implements BooksService {
     }
 
     @Override
-    public Mono<Books> getByISBN(Long ISBN) {
+    public Mono<Books> getByISBN(String ISBN) {
         return booksRepository.findByIsbn(ISBN);
     }
 
@@ -65,7 +65,7 @@ public class BooksServiceImpl implements BooksService {
 
     @Override
     public Flux<Books> getByYearOfPublication(Integer yearOfPublication) {
-        return booksRepository.findByYearOfPublicationContaining(yearOfPublication);
+        return booksRepository.findByYearOfPublication(yearOfPublication);
     }
 
     @Override

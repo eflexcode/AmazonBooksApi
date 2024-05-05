@@ -26,7 +26,7 @@ public class BooksController {
     }
 
     @GetMapping("/isbn/{isbn}")
-    public Mono<Books> getByIsbn(@PathVariable Long isbn) {
+    public Mono<Books> getByIsbn(@PathVariable String isbn) {
         return booksService.getByISBN(isbn);
     }
 
@@ -45,6 +45,7 @@ public class BooksController {
     }
     @GetMapping("year_of_publication/{year}")
     public Flux<Books> getByYearOfPublication(@PathVariable Integer year) {
+        System.out.println("kkkkkkkkkkkkkkkkkk");
         return booksService.getByYearOfPublication(year);
     }
 }
