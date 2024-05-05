@@ -7,12 +7,12 @@ import reactor.core.publisher.Flux;
 import reactor.core.publisher.Mono;
 
 @Repository
-public interface BooksRepository extends ReactiveCrudRepository<Books, String> {
+public interface BooksRepository extends ReactiveCrudRepository<Books, Long> {
 
     Flux<Books> findByTitle(final String title);
     Flux<Books> findByAuthor(final String bookAuthor);
     Flux<Books> findByYearOfPublication(final Integer yearOfPublication);
     Flux<Books> findByPublisher(final String publisher);
 
-    Mono<Books> findByISBN(Long isbn);
+    Mono<Books> findByIsbn(Long isbn);
 }

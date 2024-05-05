@@ -5,11 +5,16 @@ import com.ifeanyi.AmazonBooksApi.book.model.BooksModel;
 import reactor.core.publisher.Flux;
 import reactor.core.publisher.Mono;
 
+import java.util.List;
+
 public interface BooksService {
 
     Mono<Books> createBook(BooksModel booksModel);
+
+    Flux<Books> saveMany(List<Books> books);
+
     Mono<Books> updateBook(BooksModel booksModel);
-    Mono<Books> getById(String id);
+    Mono<Books> getById(Long id);
     Mono<Books> getByISBN(Long ISBN);
     Flux<Books> getByBookTitle(final String bookTitle);
     Flux<Books> getByBookAuthor(final String bookAuthor);

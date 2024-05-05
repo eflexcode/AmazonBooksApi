@@ -20,7 +20,7 @@ public class BooksController {
         System.out.println("ggggggggggggg con");
       return booksService.createBook(booksModel);
     } @GetMapping("/book/{id}")
-    public Mono<Books> getById(@PathVariable String id){
+    public Mono<Books> getById(@PathVariable Long id){
         System.out.println("ggggggggggggg con");
       return booksService.getById(id);
     }

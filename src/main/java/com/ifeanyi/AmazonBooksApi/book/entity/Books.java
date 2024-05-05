@@ -1,5 +1,6 @@
 package com.ifeanyi.AmazonBooksApi.book.entity;
 
+import jakarta.annotation.Generated;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -9,36 +10,36 @@ import org.springframework.data.relational.core.mapping.Table;
 
 import java.math.BigInteger;
 
-@Table
+@Table(name = "books")
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
 public class Books {
 
     @Id
-    private BigInteger id;
+    private Long id;
 
-    private String ISBN;
+    private String isbn;
 
-    @Column(value = "Book-Title")
+//    @Column(value = "Book-Title")
     private String title;
 
-    @Column(value = "Book-Author")
+//    @Column(value = "Book-Author")
     private String author;
 
-    @Column(value = "Year-Of-Publication")
+//    @Column(value = "Year-Of-Publication")
     private Integer yearOfPublication;
 
-    @Column(value = "Publisher")
+//    @Column(value = "Publisher")
     private String publisher;
 
-    @Column(value = "Image-URL-S")
+//    @Column(value = "Image-URL-S")
     private String imageUrlS;
 
-    @Column(value = "Image-URL-M")
+//    @Column(value = "Image-URL-M")
     private String imageUrlM;
 
-    @Column(value = "Image-URL-L")
+//    @Column(value = "Image-URL-L")
     private String imageUrlL;
 
 }

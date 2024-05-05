@@ -7,9 +7,10 @@ import com.ifeanyi.AmazonBooksApi.book.service.BooksService;
 import lombok.AllArgsConstructor;
 import org.springframework.beans.BeanUtils;
 import org.springframework.stereotype.Service;
-import reactor.core.CoreSubscriber;
 import reactor.core.publisher.Flux;
 import reactor.core.publisher.Mono;
+
+import java.util.List;
 
 @Service
 @AllArgsConstructor
@@ -23,8 +24,12 @@ public class BooksServiceImpl implements BooksService {
         Books books = new Books();
         BeanUtils.copyProperties(booksModel, books);
 
-        booksRepository.s
         return booksRepository.save(books);
+    }
+    @Override
+    public Flux<Books> saveMany(List<Books> books) {
+
+        return booksRepository.saveAll(books);
     }
 
     @Override
@@ -33,7 +38,7 @@ public class BooksServiceImpl implements BooksService {
     }
 
     @Override
-    public Mono<Books> getById(String id) {
+    public Mono<Books> getById(Long id) {
 
         System.out.println("ggggggggggggg service " + booksRepository.findById(id));
 
@@ -46,7 +51,7 @@ public class BooksServiceImpl implements BooksService {
 
     @Override
     public Mono<Books> getByISBN(Long ISBN) {
-        return booksRepository.findByISBN(ISBN);
+        return booksRepository.findByIsbn(ISBN);
     }
 
     @Override
