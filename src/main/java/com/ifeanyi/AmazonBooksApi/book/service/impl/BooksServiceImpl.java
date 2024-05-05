@@ -40,11 +40,6 @@ public class BooksServiceImpl implements BooksService {
     @Override
     public Mono<Books> getById(Long id) {
 
-        System.out.println("ggggggggggggg service " + booksRepository.findById(id));
-
-        Books books = new Books();
-        books.setTitle("yyyyyyyyyyyyy");
-
         return  booksRepository.findById(id);
     }
 

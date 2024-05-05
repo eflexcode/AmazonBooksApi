@@ -30,20 +30,20 @@ public class BooksController {
         return booksService.getByISBN(isbn);
     }
 
-    @GetMapping("title/{title}")
+    @GetMapping("/title/{title}")
     public Flux<Books> getByTitle(@PathVariable String title) {
         return booksService.getByTitle(title);
     }
 
-    @GetMapping("author/{author}")
+    @GetMapping("/author/{author}")
     public Flux<Books> getByAuthor(@PathVariable String author) {
         return booksService.getByBookAuthor(author);
     }
-    @GetMapping("publisher/{publisher}")
+    @GetMapping("/publisher/{publisher}")
     public Flux<Books> getByPublisher(@PathVariable String publisher) {
         return booksService.getByPublisher(publisher);
     }
-    @GetMapping("year_of_publication/{year}")
+    @GetMapping("/year_of_publication/{year}")
     public Flux<Books> getByYearOfPublication(@PathVariable Integer year) {
         System.out.println("kkkkkkkkkkkkkkkkkk");
         return booksService.getByYearOfPublication(year);
