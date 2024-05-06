@@ -24,7 +24,6 @@ public class ApiUserServiceImpl implements ApiUserService {
         if (!Util.isEmailValid(email))
             throw new DuplicateException("Email is not valid");
 
-
         ApiUser apiUser = new ApiUser();
         apiUser.setApiKey(UUID.randomUUID().toString());
         apiUser.setEmail(email);
@@ -49,7 +48,7 @@ public class ApiUserServiceImpl implements ApiUserService {
 
     @Override
     public void delete(String email) {
-        apiUserRepository.findByEmail(email).flatMap(apiUser-> apiUserRepository.delete(apiUser));
+        apiUserRepository.findByEmail(email).flatMap(apiUser-> apiUserRepository.delete(apiUser)).subscribe();
     }
 
 

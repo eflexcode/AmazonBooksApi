@@ -19,12 +19,12 @@ public class ApiUserController {
     public Mono<ApiUser> createApiUser(@RequestParam String email) throws DuplicateException {
         return apiUserService.createApiUser(email);
     }
-    @PostMapping
+    @GetMapping
     public Mono<ApiUser> getByEmail(@RequestParam String email) throws DuplicateException {
-        return apiUserService.createApiUser(email);
+        return apiUserService.getByEmail(email);
     }
 
-    @PostMapping
+    @DeleteMapping
     @ResponseStatus(HttpStatus.OK)
     public void delete(@RequestParam String email) throws DuplicateException {
          apiUserService.delete(email);
