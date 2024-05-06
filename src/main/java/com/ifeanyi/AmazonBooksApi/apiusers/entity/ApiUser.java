@@ -8,7 +8,7 @@ import org.springframework.data.annotation.Id;
 import org.springframework.data.relational.core.mapping.Column;
 import org.springframework.data.relational.core.mapping.Table;
 
-@Table(name = "api_users")
+@Table(name = "apiusers")
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
@@ -17,6 +17,7 @@ public class ApiUser {
     @Id
     @JsonIgnore
     private Long id;
+
     private String email;
     @Column(value = "api_key")
     private String apiKey;

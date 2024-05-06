@@ -8,8 +8,10 @@ public interface ApiUserService {
 
     Mono<ApiUser> createApiUser(String email) throws DuplicateException;
     Mono<ApiUser> getByEmail(String email);
+
     Mono<ApiUser> getByApiKey(String apiKey);
     Mono<ApiUser> getById(Long id);
+    void delete(String email);
 
 
 }
