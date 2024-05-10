@@ -9,6 +9,11 @@ import reactor.core.publisher.Mono;
 public class AuthManager implements ReactiveAuthenticationManager{
     @Override
     public Mono<Authentication> authenticate(Authentication authentication) {
-        return null;
+        return Mono.fromSupplier(() -> {
+            if (authentication != null && authentication.getCredentials() != null){
+                authentication.setAuthenticated(true);
+            }
+            return authentication;
+        });
     }
 }

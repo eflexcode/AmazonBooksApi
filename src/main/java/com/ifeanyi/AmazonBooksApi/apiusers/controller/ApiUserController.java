@@ -23,6 +23,10 @@ public class ApiUserController {
     public Mono<ApiUser> getByEmail(@RequestParam String email) throws DuplicateException {
         return apiUserService.getByEmail(email);
     }
+//    @GetMapping("/apikey")
+//    public Mono<ApiUser> getByApiKey(@RequestParam String apikey) throws DuplicateException {
+//        return apiUserService.getByApiKey(apikey);
+//    }
 
     @DeleteMapping
     @ResponseStatus(HttpStatus.OK)
