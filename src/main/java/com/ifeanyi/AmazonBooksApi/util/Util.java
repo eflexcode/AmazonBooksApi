@@ -7,9 +7,9 @@ import java.util.regex.Pattern;
 @RequiredArgsConstructor
 public class Util {
 
-    public  static boolean isEmailValid(String email){
+    public static boolean isEmailValid(String email) {
 
-        String emailRegex = "^[a-zA-Z0-9_+&*-]+(?:\\."+
+        String emailRegex = "^[a-zA-Z0-9_+&*-]+(?:\\." +
                 "[a-zA-Z0-9_+&*-]+)*@" +
                 "(?:[a-zA-Z0-9-]+\\.)+[a-z" +
                 "A-Z]{2,7}$";
@@ -21,5 +21,7 @@ public class Util {
         return pattern.matcher(email).matches();
 
     }
+
+    public static final String APIKEY_NAME_HEADER = "API_KEY";
 
 }

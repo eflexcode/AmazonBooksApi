@@ -15,11 +15,11 @@ public class ApiUserController {
 
     private ApiUserService apiUserService;
 
-    @PostMapping
+    @PostMapping("/create_apikey")
     public Mono<ApiUser> createApiUser(@RequestParam String email) throws DuplicateException {
         return apiUserService.createApiUser(email);
     }
-    @GetMapping
+    @GetMapping("/get_apikey")
     public Mono<ApiUser> getByEmail(@RequestParam String email) throws DuplicateException {
         return apiUserService.getByEmail(email);
     }
