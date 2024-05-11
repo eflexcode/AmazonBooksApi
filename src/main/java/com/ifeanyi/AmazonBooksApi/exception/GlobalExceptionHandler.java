@@ -30,6 +30,14 @@ public class GlobalExceptionHandler extends ResponseEntityExceptionHandler {
         return new ResponseEntity<>(excResponse,HttpStatus.BAD_REQUEST);
 
     }
+//    @ExceptionHandler(DuplicateKeyException.class)
+//    public ResponseEntity<ExcResponse> handleMonoException(DuplicateKeyException exception){
+//
+//        ExcResponse excResponse = new ExcResponse("Email already in use. Use {/api_users/email} to get api key", HttpStatus.BAD_REQUEST.value(),new Date());
+//
+//        return new ResponseEntity<>(excResponse,HttpStatus.BAD_REQUEST);
+//
+//    }
 
     @ExceptionHandler(DuplicateException.class)
     public ResponseEntity<ExcResponse> handleDuplicateException(DuplicateException exception){

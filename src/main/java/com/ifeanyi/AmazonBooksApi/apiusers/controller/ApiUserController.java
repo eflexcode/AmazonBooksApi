@@ -28,7 +28,7 @@ public class ApiUserController {
 //        return apiUserService.getByApiKey(apikey);
 //    }
 
-    @DeleteMapping
+    @DeleteMapping("/delete")
     @ResponseStatus(HttpStatus.OK)
     public void delete(@RequestParam String email) throws DuplicateException {
          apiUserService.delete(email);

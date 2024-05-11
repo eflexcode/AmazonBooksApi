@@ -21,12 +21,12 @@ public class SecurityConfig {
         authenticationWebFilter.setServerAuthenticationConverter(converter);
 
         return httpSecurity.authorizeExchange(exchangeSpec -> {
+
             exchangeSpec
                     .pathMatchers("/api_users/create_apikey", "/api_users/get_apikey")
                     .permitAll()
                     .anyExchange()
                     .authenticated();
-
         })
                 .addFilterAt(authenticationWebFilter, SecurityWebFiltersOrder.AUTHENTICATION)
                 .httpBasic(ServerHttpSecurity.HttpBasicSpec::disable)

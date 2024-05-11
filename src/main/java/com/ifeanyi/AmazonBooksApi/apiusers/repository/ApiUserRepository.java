@@ -10,5 +10,6 @@ public interface ApiUserRepository extends ReactiveCrudRepository<ApiUser,Long> 
 
     Mono<ApiUser> findByEmail(final String email);
     Mono<ApiUser> findByApiKey(final String apiKey);
+//    ApiUser findByApiKey(final String apiKey);
 
 }
