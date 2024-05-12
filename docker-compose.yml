@@ -10,8 +10,8 @@ services:
       - db
     environment:
       - SPRING_DATASOURCE_URL=r2dbc:postgresql://ep-orange-bush-a5y0gfft.us-east-2.aws.neon.tech/AmazonBooksApi?&sslmode=require
-      - SPRING_DATASOURCE_USERNAME=neondb_owner
-      - SPRING_DATASOURCE_PASSWORD=9r8nPgyDWXwB
+      - SPRING_DATASOURCE_USERNAME=$neondb_owner
+      - SPRING_DATASOURCE_PASSWORD=$9r8nPgyDWXwB
 
   db:
     image: postgres
@@ -19,5 +19,5 @@ services:
     ports:
       - "5432:5432"
     environment:
-        - POSTGRES_USER=compose-postgres
-        - POSTGRES_PASSWORD=compose-postgres
+        - POSTGRES_USER=$compose-postgres
+        - POSTGRES_PASSWORD=$compose-postgres
