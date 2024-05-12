@@ -1,10 +1,10 @@
 spring:
   application:
     name: AmazonBooksApi
-#  r2dbc:
-#    url: r2dbc:postgresql://ep-orange-bush-a5y0gfft.us-east-2.aws.neon.tech/AmazonBooksApi?&sslmode=require
-#    username: neondb_owner
-#    password: 9r8nPgyDWXwB
+  r2dbc:
+    url: r2dbc:postgresql://ep-orange-bush-a5y0gfft.us-east-2.aws.neon.tech/AmazonBooksApi?&sslmode=require
+    username: neondb_owner
+    password: 9r8nPgyDWXwB
 
 
 
