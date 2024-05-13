@@ -10,17 +10,23 @@
 ## Credits
   Dataset gotten from [kaggle](https://www.kaggle.com/datasets/saurabhbagchi/books-dataset)
 
+## Database used
+   postgres, code to upload csv to postgres is in AmazonBooksApiApplication class
+
+
+
 ## Api endpoints
 
  #### Creat Apikey                                                                                                 
-  ``` json
+  ``` 
   Request type: POST 
   
   https://amazonbooksapi.onrender.com/api_users/create_apikey?email=youremail@email.com
   http://localhost:8080/api_users/create_apikey?email=youremail@email.com   
   
   Returned json
-  
+  ```
+``` json
   {
 	"email": "youremail@email.com",
 	"apiKey": "19734wbe12-969f-483e-8c07-ab4dd15028"
@@ -28,14 +34,16 @@
   
 ```
 #### Forgot Apikey
- ``` json
+ ``` 
   Request type: GET 
   
   https://amazonbooksapi.onrender.com/api_users/get_apikey?email=youremail@email.com
   http://localhost:8080/api_users/get_apikey?email=youremail@email.com  
   
   Returned json
-  
+  ```
+``` json
+
   {
 	"email": "youremail@email.com",
 	"apiKey": "19734wbe12-969f-483e-8c07-ab4dd15028"
@@ -56,14 +64,15 @@
 
 #### Get Book By ID
 
-``` json
+``` 
   Request type: GET 
   
   https://amazonbooksapi.onrender.com/books/book/207
   http://localhost:8080/books/book/207  
   
   Returned json
-  
+  ```
+``` json
   {
     "id": 207,
     "isbn": "0060977493",
@@ -78,14 +87,15 @@
 ```
 #### Get Book By isbn
 
-``` json
+``` 
   Request type: GET 
   
   https://amazonbooksapi.onrender.com/books/isbn/080652121X
   http://localhost:8080/books/isbn/080652121X  
   
   Returned json
-  
+  ```
+``` json
   {
 	"id": 12,
 	"isbn": "080652121X",
@@ -100,7 +110,7 @@
 ```
 #### Get Book By title
 
-``` json
+``` 
   Request type: GET 
   
   https://amazonbooksapi.onrender.com/books/title/africa
@@ -109,7 +119,8 @@
   NOTE: query is not case sensitive
   
   Returned json
-  
+  ```
+``` json
   [
 	{
 		"id": 435,
@@ -137,7 +148,7 @@
 ```
 #### Get Book By author
 
-``` json
+``` 
   Request type: GET 
   
   https://amazonbooksapi.onrender.com/books/author/Chinua Achebe
@@ -146,7 +157,8 @@
   NOTE: query is not case sensitive
   
   Returned json
-  
+  ```
+``` json  
   [
 	{
 		"id": 6756,
@@ -175,14 +187,15 @@
 
 #### Get Book By publisher
 
-``` json
+``` 
   Request type: GET 
   
   https://amazonbooksapi.onrender.com/books/publisher/Onyx Books
   http://localhost:8080/books/isbn/publisher/Onyx Books
   
   Returned json
-  
+  ```
+``` json
   [
     {
         "id": 126,
@@ -210,14 +223,15 @@
 ```
 #### Get Book By year of publication
 
-``` json
+``` 
   Request type: GET 
   
   https://amazonbooksapi.onrender.com/books/year_of_publication/2002
   http://localhost:8080/books/isbn/year_of_publication/2002
   
   Returned json
-  
+  ```
+``` json
   [
     {
         "id": 12,
