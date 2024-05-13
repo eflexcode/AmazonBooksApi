@@ -39,7 +39,7 @@ public class AmazonBooksApiApplication {
 //                CSVReader csvReader = new CSVReader(new FileReader("C:\\Users\\E.F.Lhomes\\Downloads\\archive(4)\\books2.csv"), ';');
 //                for (int i = 0; i < 271379; i++) {
 //                    p.add(csvReader.readNext());
-//                    if(i > 69391) {
+//                    if(i > 69391) { // this is to resume where u stopped
 //
 //                        Books book = new Books();
 //
