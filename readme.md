@@ -33,6 +33,17 @@
   }
   
 ```
+
+After you have gotten your apikey add it to header with key ```API_KEY``` example code from android studio kotlin below
+
+``` kotlin
+    @Headers("API_KEY: 19734wbe12-969f-483e-8c07-ab4dd15028")
+    @GET("/books/title/{title}")
+    @JvmSuppressWildcards
+    fun getBooksByTitle(@Path("title") String titleToSearch): Call<List<Books>>
+```
+
+
 #### Forgot Apikey
  ``` 
   Request type: GET 
