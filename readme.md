@@ -17,7 +17,7 @@
 
 ## Api endpoints
 
- #### Creat Apikey                                                                                                 
+ #### Create Apikey                                                                                                 
   ``` 
   Request type: POST 
   
